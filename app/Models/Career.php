@@ -10,14 +10,14 @@ class Career extends Model
 {
     use HasFactory;
 
-    protected $fillable= ['title'];
-    /*= [
-        'name',
-        'email',
-        'password',
-    ];*/
+    protected $fillable=[
+        'title',
+        'salary_low',
+        'salary_medium',
+        'salary_high',
+    ];
 
-    public function qualification() {
+    /*public function qualification() {
         return $this->HasMany(Qualification::class);
-    }
+    }*/
 }

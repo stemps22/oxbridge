@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use App\Models\Career;
 use Http\Controllers\CareerController;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,11 +15,11 @@ use Http\Controllers\CareerController;
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
-});
+});*/
 
-Route::get('careers', function () {
+/*Route::get('careers', function () {
     return view('careers', [
         'careers' => Career::all()
     ]);
@@ -32,10 +32,4 @@ Route::get('careers/{career}', function (Career $career) {
     ]);
 });
 
-Route::post('careers', [CareerController::class, 'store']);
-
-/*Route::post('careers', function (Request $request) {
-  $reversed = strrev($request->input('reverse_this'));
-  return $reversed;
-});*/
-
+Route::post('careers', [CareerController::class, 'store']);*/

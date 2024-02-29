@@ -14,6 +14,9 @@ return new class extends Migration
         Schema::create('careers', function (Blueprint $table) {
             $table->id();
             $table->string('title')->unique();
+            $table->integer('salary_low');
+            $table->integer('salary_medium');
+            $table->integer('salary_high');
             $table->timestamps();
         });
     }

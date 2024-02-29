@@ -9,7 +9,7 @@ class Qualification extends Model
 {
     use HasFactory;
 
-    protected $fillable= ['title'];
+    protected $fillable= ['name'];
 
     public function qualification() {
         return $this->belongsTo(Career::class);
