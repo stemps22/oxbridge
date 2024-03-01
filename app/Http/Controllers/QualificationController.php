@@ -19,7 +19,7 @@ class QualificationController extends Controller
     }
 
     public function store(Request $request)
-{
+    {
     $validated = $request->validate([
         'name' => 'bail|required|unique:qualifications|string|max:255',
         'career' => 'required|integer',
@@ -31,6 +31,9 @@ class QualificationController extends Controller
     $qualification = Qualification::create($validated);
     //return new QualificationResource($qualification);
     return response()->json(201);
-}
-
+    }
+    public function search($name)
+    {
+        return  Qualification::where('name', 'like', '%' . $name . '%')->get();
+    }
 }

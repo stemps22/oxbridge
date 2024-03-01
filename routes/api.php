@@ -34,24 +34,21 @@ Route::post('/careers',['CareerController::class, store']);*/
 //Route::resource('careers', CareerController::class);
 
 Route::get('/careers', function () {
-    //return("all careers route active");
-    return new CareerCollection(Career::all());
+    return new CareerResource(Career::all());
 });
 Route::get('/careers/{id}', function (string $id) {
-    //return("single id career route active");
     return new CareerResource(Career::findOrFail($id));
 });
 Route::post('/careers', [CareerController::class, 'store']);
-/*Route::post('/careers', function () {
-    //return("new career route active");
-    return new CareerResource(Career::class,'store'));
-});*/
+
 Route::get('/qualifications', function () {
-    //return("all qualifications route active");
     return new QualificationResource(Qualification::all());
 });
 Route::get('/qualifications/{id}', function (string $id) {
-    //return("single id qualification route active");
     return new QualificationResource(Qualification::findOrFail($id));
 });
 Route::post('/qualifications', [QualificationController::class, 'store']);
+
+
+Route::get('/careers/search/{title}', [CareerController::class, 'search']);
+Route::get('/qualifications/search/{name}', [QualificationController::class, 'search']);

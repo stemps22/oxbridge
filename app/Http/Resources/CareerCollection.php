@@ -17,12 +17,13 @@ class CareerCollection extends ResourceCollection
     return [
       "id" => $this->id,
       "title" => $this->title,
-      //"qualifications" => QualificationResource::collection($this->qualifications),
       "salary" => [
           "low" => $this->salary_low,
           "medium" => $this->salary_medium,
           "high" => $this->salary_high
       ],
+      //"qualifications" => QualificationResource::collection($this->qualifications),
+      //'qualifications' => QualificationResource::collection($this->whenLoaded('qualifications')),
     ];
   }
 }

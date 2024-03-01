@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\HasMany;
+//use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Career extends Model
 {
@@ -17,7 +17,16 @@ class Career extends Model
         'salary_high',
     ];
 
-    /*public function qualification() {
-        return $this->HasMany(Qualification::class);
+    public function qualifications($career)
+    {
+        $qualifications = Qualification::where('career', $career)
+               ->orderBy('id')
+               ->get();
+        return $qualifications;
+    }
+
+    /*public function qualifications(): HasMany
+    {
+        return $this->hasMany(Qualification::class);
     }*/
 }
