@@ -34,7 +34,7 @@ Route::post('/careers',['CareerController::class, store']);*/
 //Route::resource('careers', CareerController::class);
 
 Route::get('/careers', function () {
-    return new CareerResource(Career::all());
+    return new CareerCollection(Career::all());
 });
 Route::get('/careers/{id}', function (string $id) {
     return new CareerResource(Career::findOrFail($id));

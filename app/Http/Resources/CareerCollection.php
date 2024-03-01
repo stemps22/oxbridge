@@ -22,7 +22,6 @@ class CareerCollection extends ResourceCollection
           "medium" => $this->salary_medium,
           "high" => $this->salary_high
       ],
-      //"qualifications" => QualificationResource::collection($this->qualifications),
       //'qualifications' => QualificationResource::collection($this->whenLoaded('qualifications')),
     ];
   }

@@ -22,7 +22,6 @@ class CareerResource extends JsonResource
           "medium" => $this->salary_medium,
           "high" => $this->salary_high
       ],
-      //"qualifications" => QualificationResource::collection($this->qualifications),
       //'qualifications' => QualificationResource::collection($this->whenLoaded('qualifications')),
     ];
   }

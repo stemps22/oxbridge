@@ -8,16 +8,6 @@ use App\Http\Resources\CareerResource;
 
 class CareerController extends Controller
 {
-    /*public function index()
-    {
-        return "hello";
-        $careers = Career::paginate();
-        return CareerResource::collection($careers);
-    }
-    public function show(Career $career)
-    {
-	    return new CareerResource($career);
-    }*/
 
     public function store(Request $request)
     {

@@ -17,7 +17,7 @@ class Qualification extends Model
         'date_available_to',
     ];
 
-    /*public function career() {
+    public function career() {
         return $this->belongsTo(Career::class);
-    }*/
+    }
 }
