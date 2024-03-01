@@ -9,9 +9,15 @@ class Qualification extends Model
 {
     use HasFactory;
 
-    protected $fillable= ['name'];
+    protected $fillable=[
+        'name',
+        'level',
+        'career',
+        'date_available_from',
+        'date_available_to',
+    ];
 
-    public function qualification() {
+    public function career() {
         return $this->belongsTo(Career::class);
     }
 }

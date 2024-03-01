@@ -6,6 +6,9 @@ use App\Http\Controllers\CareerController;
 use App\Http\Resources\CareerResource;
 use App\Http\Resources\CareerCollection;
 use App\Models\Career;
+use App\Http\Controllers\QualificationController;
+use App\Http\Resources\QualificationResource;
+use App\Models\Qualification;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,3 +46,12 @@ Route::post('/careers', [CareerController::class, 'store']);
     //return("new career route active");
     return new CareerResource(Career::class,'store'));
 });*/
+Route::get('/qualifications', function () {
+    //return("all qualifications route active");
+    return new QualificationResource(Qualification::all());
+});
+Route::get('/qualifications/{id}', function (string $id) {
+    //return("single id qualification route active");
+    return new QualificationResource(Qualification::findOrFail($id));
+});
+Route::post('/qualifications', [QualificationController::class, 'store']);
